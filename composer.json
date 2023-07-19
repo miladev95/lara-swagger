@@ -12,7 +12,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Miladev\\LaravelSwagger\\SettingServiceProvider"
+                "Miladev\\LaravelSwagger\\LaravelSwaggerServiceProvider"
             ],
             "aliases": {
                 "Setting": "Miladev\\LaravelSwagger\\Facades\\Setting"

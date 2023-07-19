@@ -4,7 +4,7 @@ namespace Miladev\LaravelSwagger;;
 
 use Illuminate\Support\ServiceProvider;
 
-class MyLaravelPackageServiceProvider extends ServiceProvider
+class LaravelSwaggerServiceProvider extends ServiceProvider
 {
     public function boot()
     {
