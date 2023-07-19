@@ -21,9 +21,10 @@ class CreateSwaggerCommand extends Command
         if ($handle = opendir($dir)) {
             // loop through each file in the directory
             while (($file = readdir($handle)) !== false) {
+
+                $file = $dir . $file;
                 // check if the file is a regular file
                 if (is_file($file)) {
-
 
                     $searchString = "create";
 
@@ -64,13 +65,14 @@ class CreateSwaggerCommand extends Command
             }
 
             $jsonData = json_encode($model, JSON_PRETTY_PRINT);
-            $filePath = 'data.json';
+            $filePath = 'swagger_models.json';
 
             // Write the JSON data to the file
             if (file_put_contents($filePath, $jsonData)) {
-                $this->info("JSON data has been successfully written to the file.");
+                $this->info("File path: $filePath");
+                $this->info("Swagger data has been successfully written to the file.");
             } else {
-                $this->error("Unable to write JSON data to the file.");
+                $this->error("Unable to write Swagger data to the file.");
             }
 
             closedir($handle);
