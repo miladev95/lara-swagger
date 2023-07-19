@@ -1,0 +1,39 @@
+{
+    "name": "milad/lara-swagger",
+    "description": "Swagger models creator",
+    "keywords": [ "swagger", "swagger model", "laravel swagger" ],
+    "type": "package",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Miladev\\LaravelSwagger\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Miladev\\LaravelSwagger\\SettingServiceProvider"
+            ],
+            "aliases": {
+                "Setting": "Miladev\\LaravelSwagger\\Facades\\Setting"
+            }
+        }
+    },
+    "authors": [
+        {
+            "name": "Milad",
+            "email": "miladev95@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/path/to/your/my-laravel-package"
+        }
+    ],
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-f": "vendor/bin/phpunit --filter"
+    },
+    "require": {}
+}
