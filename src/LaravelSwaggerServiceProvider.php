@@ -1,6 +1,6 @@
 <?php
 
-namespace Miladev\LaravelSwagger;;
+namespace Miladev\LaravelSwagger;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -17,6 +17,6 @@ class LaravelSwaggerServiceProvider extends ServiceProvider
 
     public function register()
     {
-        // Register any bindings or services here if needed.
+        
     }
 }

@@ -13,10 +13,7 @@
         "laravel": {
             "providers": [
                 "Miladev\\LaravelSwagger\\LaravelSwaggerServiceProvider"
-            ],
-            "aliases": {
-                "Setting": "Miladev\\LaravelSwagger\\Facades\\Setting"
-            }
+            ]
         }
     },
     "authors": [
