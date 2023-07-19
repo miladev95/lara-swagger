@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Artisan;
 
 class CreateSwaggerCommand extends Command
 {
-    protected $signature = 'lswagger:create';
+    protected $signature = 'lswagger:generate';
 
     protected $description = 'Create a swagger model file based on migrations';
 
