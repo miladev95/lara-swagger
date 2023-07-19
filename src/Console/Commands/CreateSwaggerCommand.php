@@ -5,7 +5,7 @@ namespace Miladev\LaravelSwagger\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
 
-class CreateMigrationCommand extends Command
+class CreateSwaggerCommand extends Command
 {
     protected $signature = 'lswagger:create';
 
