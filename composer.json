@@ -3,7 +3,7 @@
     "description": "Swagger models creator",
     "keywords": [ "swagger", "swagger model", "laravel swagger" ],
     "type": "package",
-    "license": "MIT",`
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Miladev\\LaravelSwagger\\": "src/"
