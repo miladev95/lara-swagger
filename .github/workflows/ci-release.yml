@@ -3,14 +3,15 @@ name: CI & Release
 on:
   push:
     branches:
-      - main
       - master
     tags:
       - 'v*'
   pull_request:
     branches:
-      - main
       - master
+
+permissions:
+  contents: read
 
 jobs:
   test:
@@ -33,6 +34,21 @@ jobs:
           extensions: mbstring, json, dom, sqlite3
           coverage: none
 
+      - name: Validate composer.json
+        run: composer validate --strict
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-${{ matrix.php-version }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-${{ matrix.php-version }}-composer-
+
       - name: Install dependencies
         run: |
           composer install --no-interaction --prefer-dist
@@ -45,7 +61,9 @@ jobs:
     name: Create GitHub Release
     needs: test
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') }}
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
@@ -58,6 +76,21 @@ jobs:
           extensions: mbstring, json, dom, sqlite3
           coverage: none
 
+      - name: Validate composer.json
+        run: composer validate --strict
+
+      - name: Get Composer cache directory
+        id: composer-cache-release
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache-release.outputs.dir }}
+          key: ${{ runner.os }}-php-8.3-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-8.3-composer-
+
       - name: Install dependencies
         run: |
           composer install --no-interaction --prefer-dist --no-dev
@@ -68,4 +101,3 @@ jobs:
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-

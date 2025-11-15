@@ -3,6 +3,7 @@
 [![Latest Stable Version](https://poser.pugx.org/miladev/lara-swagger/v)](https://packagist.org/packages/miladev/lara-swagger)
 [![License](https://poser.pugx.org/miladev/lara-swagger/license)](https://packagist.org/packages/miladev/lara-swagger)
 [![Total Downloads](https://poser.pugx.org/miladev/lara-swagger/downloads)](https://packagist.org/packages/miladev/lara-swagger)
+[![CI & Release](https://github.com/miladev95/lara-swagger/actions/workflows/ci-release.yml/badge.svg)](https://github.com/miladev95/lara-swagger/actions/workflows/ci-release.yml)
 
 A Swagger model generator based on migrations
 
