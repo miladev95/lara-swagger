@@ -23,6 +23,38 @@ php artisan lswagger:generate
 ```
 This command will create swagger_models.js file which contains all models of your laravel application
 
+## Testing
+
+This package uses PHPUnit and Orchestra Testbench.
+
+- Prerequisites: PHP 8.2+ and Composer
+- Install dev dependencies:
+
+```bash
+composer install
+```
+
+If you do not have a global Composer installed, you can use a local PHAR inside the project:
+
+```bash
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php composer-setup.php --install-dir=. --filename=composer.phar
+php -r "unlink('composer-setup.php');"
+php composer.phar install
+```
+
+- Run the tests:
+
+```bash
+composer test
+# or
+vendor/bin/phpunit
+# or a specific test file
+vendor/bin/phpunit tests/Feature/CreateSwaggerCommandTest.php
+```
+
+If you run tests from an IDE, ensure the working directory is the project root so the generated `swagger_models.json` can be found.
+
 ## Roadmap
 
 - Support enum types

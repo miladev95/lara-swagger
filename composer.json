@@ -9,6 +9,11 @@
             "Miladev\\LaravelSwagger\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
@@ -22,15 +27,13 @@
             "email": "miladev95@gmail.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "path",
-            "url": "/path/to/your/my-laravel-package"
-        }
-    ],
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-f": "vendor/bin/phpunit --filter"
     },
-    "require": {}
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "orchestra/testbench": "^8.0"
+    }
 }
