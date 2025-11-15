@@ -1,8 +1,8 @@
 # Laravel Swagger
 
-[![Latest Stable Version](https://poser.pugx.org/miladev/lara-swagger/v)](//packagist.org/packages/miladev/lara-setting)
-[![License](https://poser.pugx.org/miladev/lara-swagger/license)](//packagist.org/packages/miladev/lara-setting)
-[![Total Downloads](https://poser.pugx.org/miladev/lara-swagger/downloads)](//packagist.org/packages/miladev/lara-setting)
+[![Latest Stable Version](https://poser.pugx.org/miladev/lara-swagger/v)](https://packagist.org/packages/miladev/lara-swagger)
+[![License](https://poser.pugx.org/miladev/lara-swagger/license)](https://packagist.org/packages/miladev/lara-swagger)
+[![Total Downloads](https://poser.pugx.org/miladev/lara-swagger/downloads)](https://packagist.org/packages/miladev/lara-swagger)
 
 A Swagger model generator based on migrations
 

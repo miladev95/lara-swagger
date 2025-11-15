@@ -1,9 +1,13 @@
 {
     "name": "miladev/lara-swagger",
-    "description": "Swagger models creator",
+    "description": "Swagger model generator based on Laravel migrations",
     "keywords": [ "swagger", "swagger model", "laravel swagger" ],
-    "type": "package",
+    "type": "library",
     "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^10.0|^11.0"
+    },
     "autoload": {
         "psr-4": {
             "Miladev\\LaravelSwagger\\": "src/"
@@ -19,6 +23,10 @@
             "providers": [
                 "Miladev\\LaravelSwagger\\LaravelSwaggerServiceProvider"
             ]
+        },
+        "branch-alias": {
+            "dev-main": "1.x-dev",
+            "dev-master": "1.x-dev"
         }
     },
     "authors": [
@@ -31,9 +39,8 @@
         "test": "vendor/bin/phpunit",
         "test-f": "vendor/bin/phpunit --filter"
     },
-    "require": {},
     "require-dev": {
-        "phpunit/phpunit": "^10.0",
-        "orchestra/testbench": "^8.0"
+        "phpunit/phpunit": "^10.5",
+        "orchestra/testbench": "^8.0|^9.0"
     }
 }
